@@ -1,5 +1,7 @@
 package bilibili.lingaly.fabricmodregister;
 
+import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.item.Item;
 import org.json.simple.JSONObject;
 
 import java.io.*;
@@ -115,5 +117,9 @@ public class JsonCreater {
             jsonObject.put("itemGroup." + MOD_ID + "." + name, actualname);
         }
         Utils.writeFile(file2, jsonObject);
+    }
+
+    public static void registerFuel(Item item, int ticktimes){
+        FuelRegistry.INSTANCE.add(item, ticktimes);
     }
 }
