@@ -119,7 +119,4 @@ public class JsonCreater {
         Utils.writeFile(file2, jsonObject);
     }
 
-    public static void registerFuel(Item item, int ticktimes){
-        FuelRegistry.INSTANCE.add(item, ticktimes);
-    }
 }

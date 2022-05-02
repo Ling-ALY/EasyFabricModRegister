@@ -3,6 +3,7 @@ package bilibili.lingaly.fabricmodregister;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.entity.effect.StatusEffect;
@@ -139,6 +140,20 @@ public class ModRegister {
         }
     }
 
+    /**
+     * 注册带有单个效果的食物
+     * @param MOD_ID 模组ID
+     * @param name 食物名称
+     * @param itemGroup 所在的物品类别
+     * @param hunger 恢复到饥饿值
+     * @param saturationModifier 恢复到保湿度
+     * @param alwaysEdible 是否在满戒指呢情况下使用
+     * @param statusEffect 效果
+     * @param duration 持续时间
+     * @param amplifier
+     * @param chance 几率
+     * @return
+     */
     public static Item registerFoodItemWithEffect(String MOD_ID,
                                                   String name,
                                                   ItemGroup itemGroup,
@@ -160,5 +175,14 @@ public class ModRegister {
                                 duration,
                                 amplifier,
                                 chance))));
+    }
+
+    /**
+     * 为物品注册为燃料
+     * @param item 物品
+     * @param ticktimes 燃烧事件(1秒=20yick)
+     */
+    public static void registerFuel(Item item, int ticktimes){
+        FuelRegistry.INSTANCE.add(item, ticktimes);
     }
 }
