@@ -10,4 +10,4 @@ maven {
 
 modImplementation include("bilibili.lingaly:easyfabricmodregister:<version>")
 
-    implementation "com.googlecode.json-simple:json-simple:1.1.1"
+implementation "com.googlecode.json-simple:json-simple:1.1.1"
