@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "fabricmodregister",
+  "version": "${version}",
+  "name": "FabricModRegister",
+  "description": "FabricModRegister",
+  "authors": [
+    "LINGALY"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/fabricmodregister/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "bilibili.lingaly.fabricmodregister.client.FabricmodregisterClient"
+    ],
+    "main": [
+      "bilibili.lingaly.fabricmodregister.Fabricmodregister"
+    ]
+  },
+  "mixins": [
+    "fabricmodregister.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.3",
+    "fabric": "*",
+    "minecraft": "1.18.2"
+  }
+}
